@@ -1,0 +1,19 @@
+
+.signin{
+    /* background: rgb(154, 205, 50,0.6); */
+    background-image: url('../Assets/bg_login.jpg') ;
+}
+.signin1{
+  color: black;
+  background:rgb(21, 55, 119,0.65);
+  padding: 30px 30px;
+  /* padding-bottom: 30px; */
+  margin: 120px 0;
+  height: auto;
+  border-radius: 10px;
+}
+.signin1 h2{
+  text-align: center;
+  color:black;
+  padding-bottom: 20px;
+}

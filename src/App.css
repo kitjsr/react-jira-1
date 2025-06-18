@@ -5,6 +5,55 @@
   text-align: center;
 } */
 
+.dash{
+  background: yellow;
+    /* background: orange; */
+}
+.mainarea{
+  color: #505258;
+  background: #F4F7FA;
+  height: 650px;
+  border-left: #DDDEDD 1px solid;
+    /* background: yellow; */  
+}
+.mainarea h2{
+  color:black
+}
+
+.sidenav{
+  /* background: #F4F7FA; */
+  background: white;
+    /* background-image: linear-gradient(
+    to right,#4dd0e1,#26c6da,#00bcd4,#00acc1, #0097a7,#00838f ,#006064); */
+    /* background: #84FFFF; */
+  color: #505258;
+
+  height: 650px;
+
+    
+}
+.sidenav ul{
+  margin: 0;
+  padding: 0;
+}
+.sidenav ul li{
+     background: white;
+  /* background: #F4F7FA; */
+    /* background: #84FFFF; */
+    text-decoration: none;
+    border-bottom: solid 1px black;
+    padding: 5px 8px;
+}
+
+.sidenav ul li:hover{
+  color: white;
+  background: rgb(21, 55, 119);
+    /* background: purple; */
+    padding: 5px 8px;
+    text-decoration: none;
+    border-bottom: solid 1px black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,0 +1,19 @@
+
+.signup{
+    /* background: rgb(154, 205, 50,0.6); */
+    background-image: url('../Assets/bg_signup.jpg') ;
+}
+.signup1{
+  color: black;
+  background: rgb(244, 247, 244,0.85);
+  padding: 30px 30px;
+  /* padding-bottom: 30px; */
+  margin: 65px 0;
+  height: auto;
+  border-radius: 10px;
+}
+.signup1 h2{
+  text-align: center;
+  color:black;
+  padding-bottom: 20px;
+}
