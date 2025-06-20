@@ -1,0 +1,11 @@
+
+.profile1{
+  background: #F4F7FA;
+  height: auto;
+  border-left: #DDDEDD 1px solid;
+    padding:40px 20px ;
+}
+.profile1 h1{
+  text-align: center;
+  padding-bottom: 40px;
+}

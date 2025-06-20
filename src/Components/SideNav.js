@@ -63,7 +63,7 @@ export const SideNav = () => {
       <br></br>
       <br></br>
       <br></br>
-      <li>
+      {/* <li>
         <Link to="/forUser">For You</Link>
       </li>
       <li>
@@ -77,7 +77,7 @@ export const SideNav = () => {
       </li>
       <li>
         <Link to="/apps">Apps</Link>
-      </li>
+      </li> */}
     </ul>
     // </div>
   );

@@ -1,19 +1,21 @@
 
 .signup{
-    /* background: rgb(154, 205, 50,0.6); */
-    background-image: url('../Assets/bg_signup.jpg') ;
+    background-image: url('../Assets/bg_login.jpg') ;
+    /* background-image: url('../Assets/bg_signup.jpg') ; */
 }
 .signup1{
-  color: black;
-  background: rgb(244, 247, 244,0.85);
+  color: whitesmoke;
+  /* background: #F4F7FA; */
+  background:rgb(21, 55, 119,0.65);
+  /* background: rgb(244, 247, 244,0.85); */
   padding: 30px 30px;
-  /* padding-bottom: 30px; */
   margin: 65px 0;
   height: auto;
+    border: solid 1px black;
   border-radius: 10px;
 }
 .signup1 h2{
   text-align: center;
-  color:black;
+  color:rgb(244, 239, 239);
   padding-bottom: 20px;
 }

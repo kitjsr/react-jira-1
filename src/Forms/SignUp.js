@@ -12,7 +12,8 @@ export const SignUp = () => {
 
   const schema = yup.object().shape({
     email: yup.string().email().required(),
-    username: yup.string().required(),
+    username: yup.string().required()
+    .min(5, 'username must be at least 5 characters long'),
     password: yup.string().required()
     .min(8, 'Password must be 8 characters long')
     .matches(/[0-9]/, 'Password requires a number')
@@ -30,7 +31,7 @@ export const SignUp = () => {
           <Col md={3}></Col>
           <Col md={6} className="signup1">
             <div>
-              <h2>Sign Up to continue</h2>
+              <h2>Sign up to continue</h2>
               <Formik
                 validationSchema={schema}
                 onSubmit={console.log}
@@ -66,8 +67,8 @@ export const SignUp = () => {
                           Looks good!
                         </Form.Control.Feedback> */}
                       </Form.Group>
-                    
-                      
+                    </Row>
+                    <Row className='mb-2'>
                      
                       <Form.Group
                         as={Col}
@@ -94,8 +95,8 @@ export const SignUp = () => {
                           </Form.Control.Feedback>
                         </InputGroup>
                       </Form.Group>
-                    </Row>
-                    <Row className="mb-3">
+                      </Row>
+                    <Row className="mb-2">
                       <Form.Group
                         as={Col}
                         md="12"
@@ -116,6 +117,9 @@ export const SignUp = () => {
                           {errors.password}
                         </Form.Control.Feedback>
                       </Form.Group>
+                   
+                    </Row>
+                    <Row className='mb-3'>
                       <Form.Group
                         as={Col}
                         md="12"
@@ -136,9 +140,8 @@ export const SignUp = () => {
                           {errors.confirmPassword}
                         </Form.Control.Feedback>
                       </Form.Group>
-                   
-                    </Row>
-                    <Form.Group className="mb-3">
+                      </Row>
+                    <Form.Group className="mb-5">
                       <Form.Check
                         required
                         name="terms"
@@ -150,7 +153,7 @@ export const SignUp = () => {
                         id="validationFormik0"
                       />
                     </Form.Group>
-                    <Button type="submit">Submit form</Button>
+                    <Button type="submit">Sign up</Button>
                   </Form>
                 )}
               </Formik>

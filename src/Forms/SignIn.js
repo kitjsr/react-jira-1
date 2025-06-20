@@ -12,8 +12,8 @@ export const SignIn = () => {
   const { Formik } = formik;
 
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
-    username: yup.string().required(),
+    username: yup.string().required()
+    .min(5, 'username must be at least 5 characters long'),
     password: yup.string().required()
     .min(8, 'Password must be 8 characters long')
     .matches(/[0-9]/, 'Password requires a number')
@@ -26,15 +26,14 @@ export const SignIn = () => {
     <div>
       <Container fluid className='signin'>
         <Row>
-          <Col md={3}></Col>
-          <Col md={6} className="signin1">
+          <Col ></Col>
+          <Col md={5} className="signin1">
             <div>
               <h2>Log in to continue</h2>
               <Formik
                 validationSchema={schema}
                 onSubmit={console.log}
                 initialValues={{
-                  email: "",
                   username:"",
                  password:"",
                 
@@ -42,31 +41,7 @@ export const SignIn = () => {
               >
                 {({ handleSubmit, handleChange, values, touched, errors }) => (
                   <Form noValidate onSubmit={handleSubmit}>
-                    <Row className="mb-2">
-                      <Form.Group
-                        as={Col}
-                        md="12"
-                        controlId="validationFormik01"
-                      >
-                        <Form.Label>E-mail</Form.Label>
-                        <Form.Control
-                          type="email"
-                          name="email"
-                          placeholder='E-mail address'
-                          value={values.email}
-                          onChange={handleChange}
-                            isInvalid={!!errors.email}
-                          isValid={touched.email && !errors.email}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          {errors.email}
-                        </Form.Control.Feedback>
-                        {/* <Form.Control.Feedback>
-                          Looks good!
-                        </Form.Control.Feedback> */}
-                      </Form.Group>
-                    
-                      
+                    <Row className='mb-3'>
                      
                       <Form.Group
                         as={Col}
@@ -93,8 +68,9 @@ export const SignIn = () => {
                           </Form.Control.Feedback>
                         </InputGroup>
                       </Form.Group>
-                    </Row>
-                    <Row className="mb-3">
+                      
+                      </Row>
+                    <Row className="mb-4">
                       <Form.Group
                         as={Col}
                         md="12"
@@ -119,13 +95,13 @@ export const SignIn = () => {
                    
                     </Row>
                    
-                    <Button type="submit">Submit form</Button>
+                    <Button type="submit">Log in</Button>
                   </Form>
                 )}
               </Formik>
             </div>
           </Col>
-          <Col md={3}></Col>
+          <Col ></Col>
         </Row>
       </Container>
     </div>

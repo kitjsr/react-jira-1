@@ -1,16 +1,18 @@
 
 .signin{
-    /* background: rgb(154, 205, 50,0.6); */
-    background-image: url('../Assets/bg_login.jpg') ;
+    background-image: url('../Assets/bg_signup.jpg') ;
 }
 .signin1{
+  /* background:rgb(21, 55, 119,0.65); */
+  background: #F4F7FA;
+  background: rgb(244, 247, 244,0.85);
   color: black;
-  background:rgb(21, 55, 119,0.65);
-  padding: 30px 30px;
+  padding: 50px;
   /* padding-bottom: 30px; */
   margin: 120px 0;
   height: auto;
-  border-radius: 10px;
+    border: solid 1px grey;
+  border-radius: 20px;
 }
 .signin1 h2{
   text-align: center;
