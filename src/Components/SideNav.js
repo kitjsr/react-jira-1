@@ -5,20 +5,24 @@ import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
 
 export const SideNav = () => {
   return (
-    // <div className='sidenav'>
+    <div className='sidenav1'>
     <ul>
       <li>
-      <Dropdown  data-bs-theme="light">
-        <Dropdown.Toggle split id="dropdown-button-light-example1" variant="">
-          Plans
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item><Link to='/newPlan'>New Plan</Link></Dropdown.Item>
-          <Dropdown.Item><Link to='/plans'>All Plans</Link></Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
+        <Link to="/projects">Projects</Link>
+      </li>
+      <li>
+        <Link to="/teams">Teams</Link>
+      </li>
+      <li>
+        <Link to="/tasks">Tasks</Link>
+      </li>
+      <li>
+        <Link to="/plans">Plans</Link>
+      </li>
+      {/* <li>
       <Dropdown  data-bs-theme="light">
         <Dropdown.Toggle split id="dropdown-button-light-example1" variant="">
           Teams
@@ -51,18 +55,8 @@ export const SideNav = () => {
           <Dropdown.Item><Link to='/projects'>All Projects</Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      </li>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      </li> */}
+     
       {/* <li>
         <Link to="/forUser">For You</Link>
       </li>
@@ -79,6 +73,6 @@ export const SideNav = () => {
         <Link to="/apps">Apps</Link>
       </li> */}
     </ul>
-    // </div>
+     </div>
   );
 };

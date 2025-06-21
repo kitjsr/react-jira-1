@@ -1,0 +1,17 @@
+.modalPic{
+    /* background: yellow; */
+    background:  #f4f7fa;
+    padding: 120px 0;
+    margin-left:15px;
+    text-align: center;
+    border: 1px solid #E9EEF4;
+    border-radius: 4px;
+}
+.project1{
+  background: #fff;
+  height: auto;
+  border: 1px solid #E9EEF4;
+  padding:20px ;
+  margin: 5px 10px 0px 8px;
+  border-radius: 6px;
+}

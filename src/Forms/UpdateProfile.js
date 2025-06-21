@@ -15,6 +15,7 @@ export const UpdateProfile = () => {
     firstName: yup.string().required(),
     lastName: yup.string().required(),
     username: yup.string().required(),
+    email: yup.string().email().required(),
     city: yup.string().required(),
     state: yup.string().required(),
     zip: yup.string().required(),
@@ -24,12 +25,24 @@ export const UpdateProfile = () => {
     <>
       <Container fluid className="dash">
         <Row>
-          <Col md={2} className="sidenav">
-            <SideNav></SideNav>
+          <Col md={2}>
+          <div className="sidenav"><SideNav></SideNav></div>
+            
           </Col>
           <Col>
-          <div className="profile1">
-            <h1>Update Your Profile</h1>
+          {/* <div className="manage1">
+            <Row>
+              <Col md={1}><Button variant="primary"> New</Button> </Col>
+              <Col md={1}><Button variant="danger"> Delete</Button> </Col>
+              <Col md={7}></Col>
+              <Col md={1}><Button variant="success">Update</Button></Col>
+              <Col md={1}><Button variant="info"> Export</Button></Col>
+            </Row>
+          </div> */}
+          <div className="manage3">
+            <div className="head">
+            <h3>Update Your Profile</h3>
+            </div>
             <Formik
               validationSchema={schema}
               onSubmit={console.log}
@@ -37,6 +50,7 @@ export const UpdateProfile = () => {
                 firstName: "",
                 lastName: "",
                 username: "",
+                email: "",
                 city: "",
                 state: "",
                 zip: "",
@@ -45,7 +59,7 @@ export const UpdateProfile = () => {
             >
               {({ handleSubmit, handleChange, values, touched, errors }) => (
                 <Form noValidate onSubmit={handleSubmit}>
-                  <Row className="mb-5">
+                  <Row className="mb-4">
                     <Form.Group as={Col} md="6" controlId="validationFormik01">
                       <Form.Label>First name</Form.Label>
                       <InputGroup hasValidation>
@@ -86,7 +100,7 @@ export const UpdateProfile = () => {
                       {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
                     </Form.Group>
                   </Row>
-                  <Row className="mb-5">
+                  <Row className="mb-4">
                     <Form.Group
                       as={Col}
                       md="6"
@@ -130,12 +144,12 @@ export const UpdateProfile = () => {
                           isValid={touched.email && !errors.email}
                         />
                         <Form.Control.Feedback type="invalid">
-                          email is required
+                          {errors.email}
                         </Form.Control.Feedback>
                       </InputGroup>
                     </Form.Group>
                     </Row>
-                  <Row className="mb-5">
+                  <Row className="mb-4">
                     <Form.Group as={Col} md="6" controlId="validationFormik03">
                       <Form.Label>City</Form.Label>
                       <Form.Control
@@ -183,7 +197,7 @@ export const UpdateProfile = () => {
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
-                  <Form.Group className="mb-5">
+                  <Form.Group className="mb-4">
                     <Form.Check
                       required
                       name="terms"

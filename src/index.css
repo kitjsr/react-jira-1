@@ -6,6 +6,9 @@
     background: beige;
 } */
 
+h1,h2,h3{
+  color: #334155;
+}
 .logo1{
   background: black;
   float: left;
@@ -14,22 +17,22 @@
 }
 
 .nav {
-  background:black;
+  background:#fff;
+  /* border-bottom: 2px solid #E9EEF4; */
   /* background-image: linear-gradient(
     to right,#b2ebf2,#80deea,#4dd0e1,#26c6da,#00bcd4,#00acc1, #0097a7,#00838f ,#006064); */
   padding: 6px;
 }
-.nav1 a:link,.nav1 a:visited{
-  color:white;
+/* .nav1 a:link,.nav1 a:visited{
+  color:#334155;
   text-decoration: none;
-  /* padding-right:10px;
-  padding-left:10px; */
+  padding-right:10px;
+  padding-left:10px;
   
-}
+} */
 .nav1 a:hover{
-  color:white;
-  text-decoration: none;
-  background: rgb(21, 55, 119);
+  color:blue;
+  /* text-decoration: none; */
   border-radius: 6px;
   /* padding-right:10px;
   padding-left:10px; */

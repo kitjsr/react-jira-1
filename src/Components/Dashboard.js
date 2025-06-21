@@ -1,7 +1,7 @@
 import React from "react";
 import { Sidebar, Menu, MenuItem, sidebarClasses } from "react-pro-sidebar";
 import "../Styles/Dashboard.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router";
 import { SideNav } from "./SideNav";
 import { ForUser } from "./ForUser";
@@ -10,7 +10,19 @@ import { ForUser } from "./ForUser";
 export const Dashboard = () => {
   return (
     <>
-    <ForUser></ForUser>
+      <Container fluid className="dash">
+        <Row>
+          <Col md={2}>
+          <div className="sidenav"><SideNav></SideNav></div>
+            
+          </Col>
+          <Col>
+          <div className="manage3">
+            <h2>G'Day Anushruti!</h2>
+           </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

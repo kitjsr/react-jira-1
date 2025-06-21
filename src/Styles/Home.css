@@ -1,0 +1,62 @@
+.slidearea{
+    background: #DEEBFF;
+    padding: 30px 0 40px 0;
+}
+.slide1{
+    background: #DEEBFF;
+    padding:0 0 40px 20px ;
+    text-align: center;
+}
+.box{
+    border:1px solid #DEEBFF;
+    text-align: center;
+    background: #E8F1FF;
+    padding:15px;
+    margin: 30px 30px 7px 30px;
+    border-radius: 6px;
+    float: left;
+
+}
+.box:hover{
+    border:1px solid #cfd6e1;
+        /* box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15); */
+    box-shadow: 1px 1px 6px 1px #cfd6e1;
+}
+.slide2{
+    /* background: green; */
+    padding: 30px;
+}
+.slide3{
+    background: cyan;
+    padding: 0px;
+    margin-left: 20px;
+
+}
+.slide3:hover{
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15);
+
+}
+.timeline{
+    background: yellow;
+    height: 300px;
+}
+.darea{
+    background: cyan;
+    height: 300px;
+}
+.carea{
+    background: red;
+    height: 300px;
+}
+.testarea{
+    background: blueviolet;
+    height: 300px;
+}
+.footarea{
+    background: greenyellow;
+    height: 300px;
+}
+.footer{
+    background: maroon;
+    height: 300px;
+}

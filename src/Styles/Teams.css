@@ -1,0 +1,14 @@
+.modalPic{
+    background:  #F4F7FA;
+    padding: 70px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+.team1{
+  background: #fff;
+  height: auto;
+  border: 1px solid #E9EEF4;
+  padding:20px ;
+  margin: 5px 10px 0px 8px;
+  border-radius: 8px;
+}

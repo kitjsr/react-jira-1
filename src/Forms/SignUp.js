@@ -55,6 +55,7 @@ export const SignUp = () => {
                         <Form.Control
                           type="email"
                           name="email"
+                          placeholder='E-mail address'
                           value={values.email}
                           onChange={handleChange}
                             isInvalid={!!errors.email}
@@ -141,7 +142,7 @@ export const SignUp = () => {
                         </Form.Control.Feedback>
                       </Form.Group>
                       </Row>
-                    <Form.Group className="mb-5">
+                    <Form.Group className="mb-4">
                       <Form.Check
                         required
                         name="terms"

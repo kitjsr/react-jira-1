@@ -6,7 +6,7 @@ import Home from "./Components/Home";
 import { Dashboard } from "./Components/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "react-bootstrap/Nav";
-import { Image, NavDropdown } from "react-bootstrap";
+import { Col, Container, Image, NavDropdown, Row } from "react-bootstrap";
 import { SideNav } from "./Components/SideNav";
 import { ForUser } from "./Components/ForUser";
 import { Recent } from "./Components/Recent";
@@ -20,36 +20,56 @@ import { SignUp } from "./Forms/SignUp";
 import { SignIn } from "./Forms/SignIn";
 import { UpdateProfile } from "./Forms/UpdateProfile";
 import { Tasks } from "./Components/Tasks";
-import { InvitePeople } from "./Forms/InvitePeople";
+import allTeams from "./Assets/allTeams.png";
 
 function App() {
   return (
-    <div>
-      <Nav className="justify-content-end" activeKey="/home">
-        <Image src={logo} className="App-logo"></Image>
-        <Nav.Item className="nav1">
-          <Nav.Link>
-            <Link to="/home">Home</Link>
-          </Nav.Link>
-        </Nav.Item>
-        <NavDropdown title="Profile" id="basic-nav-dropdown">
-          <NavDropdown.Item>
-            <Link to="/dashboard">Dashboard</Link>
-          </NavDropdown.Item>
-          <NavDropdown.Item>
-            <Link to="/updateProfile">Update Profile</Link>
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
-        <Nav.Item className="nav1">
-          <Nav.Link><Link to="/signUp">Sign Up</Link></Nav.Link>
-        </Nav.Item>
-         <Nav.Item className="nav1">
-          <Nav.Link><Link to="/signIn">Sign In</Link></Nav.Link>
-        </Nav.Item>
-      </Nav>
+    <>
+      <Container>
+        <Row>
+          <Col md={1}>
+            <div className="logo">
+              <Image src={allTeams} width={40}></Image>
+            </div>
+            
+          </Col>
+          <Col><div className="logo_name"><h3>JIRA</h3></div></Col>
+          <Col>
+            <Nav className="justify-content-end" activeKey="/home">
+              <Nav.Item className="nav1">
+                <Nav.Link>
+                  <Link to="/home">Home</Link>
+                </Nav.Link>
+              </Nav.Item>
+              <NavDropdown title="Profile" id="basic-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to="/dashboard">Dashboard</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/updateProfile">Update Profile</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Item className="nav1">
+                <Nav.Link>
+                  <Link to="/signUp">Sign Up</Link>
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="nav1">
+                <Nav.Link>
+                  <Link to="/signIn">Sign In</Link>
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+        </Row>
+      </Container>
 
       <Routes>
         <Route path="" element={<Home />} />
@@ -64,7 +84,6 @@ function App() {
         <Route path="/plans" element={<Plans />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/teams" element={<Teams />} />
-        <Route path="/invitePeople" element={<InvitePeople />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/dummy" element={<Dummy />} />
         <Route path="/signUp" element={<SignUp />} />
@@ -72,7 +91,7 @@ function App() {
         <Route path="/updateProfile" element={<UpdateProfile />} />
         <Route path="*" element={<Home />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
