@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { SideNav } from "../Components/SideNav";
 import Button from 'react-bootstrap/Button';
@@ -11,6 +11,8 @@ import '../Styles/Projects.css'
 import '../Styles/UpdateProfile.css'
 import { Image } from "react-bootstrap";
 import jiraAdd from "../Assets/jiraAdd.png";
+import { FaBeer, FaPen, FaPenAlt, FaTrash } from "react-icons/fa";
+import { red } from '@mui/material/colors';
 
 
 
@@ -21,10 +23,14 @@ function MyVerticallyCenteredModal(props) {
   const schema = yup.object().shape({
     projectName: yup.string().required(),
     clientName: yup.string().required(),
-    mobile: yup.string().required(),
-    timeAllotted: yup.string().required(),
+    mobile: yup.string().required()
+      .matches(/^\d{10}$/, "Mobile number must be of 10 digits"),
+    // .min(10,"Mobile number must be of 10 digits")
+    // .max(10,"Mobile number must be of 10 digits"),
+    timeAllotted: yup.string().required()
+    .matches(/[0-9]/, 'Only number'),
     deadline: yup.string().required(),
-    designation: yup.string().required(),
+    projectCategory: yup.string().required(),
     terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
   });
   return (
@@ -53,7 +59,7 @@ function MyVerticallyCenteredModal(props) {
                 mobile: "",
                 timeAllotted: "",
                 deadline: "",
-                designation: "",
+                projectCategory: "",
                 terms: false,
               }}
             >
@@ -73,8 +79,8 @@ function MyVerticallyCenteredModal(props) {
                           isValid={touched.projectName && !errors.projectName}
                         />
                         <Form.Control.Feedback type="invalid">
-                          projectName is required
-                          {/* {errors.projectName} */}
+                          {/* projectName is required */}
+                          {errors.projectName}
                         </Form.Control.Feedback>
                       </InputGroup>
                       {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
@@ -94,8 +100,8 @@ function MyVerticallyCenteredModal(props) {
                           isValid={touched.clientName && !errors.clientName}
                         />
                         <Form.Control.Feedback type="invalid">
-                          clientName is required
-                          {/* {errors.clientName} */}
+                          {/* clientName is required */}
+                          {errors.clientName}
                         </Form.Control.Feedback>
                       </InputGroup>
 
@@ -121,23 +127,30 @@ function MyVerticallyCenteredModal(props) {
                           isValid={touched.mobile && !errors.mobile}
                         />
                         <Form.Control.Feedback type="invalid">
-                          mobile is required
+                          {/* mobile is required */}
+                          {errors.mobile}
                         </Form.Control.Feedback>
                       </InputGroup>
                     </Form.Group>
                     <Form.Group as={Col} md="6" controlId="validationFormik04">
-                      <Form.Label>Designation</Form.Label>
-                      <Form.Control
+                      <Form.Label>Project Category</Form.Label>
+                      <Form.Select
                         type="text"
-                        placeholder="Designation"
-                        name="designation"
-                        value={values.designation}
+                        placeholder="projectCategory"
+                        name="projectCategory"
+                        value={values.projectCategory}
                         onChange={handleChange}
-                        isInvalid={!!errors.designation}
-                        isValid={touched.designation && !errors.designation}
-                      />
+                        isInvalid={!!errors.projectCategory}
+                        isValid={touched.projectCategory && !errors.projectCategory}>
+                        <option value="">Select one</option>
+                        <option value="eCommerce">E-Commerce Website</option>
+                        <option value="realTimeChat">Real Time Chat App</option>
+                        <option value="socialMedia">Social Media App</option>
+                        <option value="expenseTracker">Expense Tracker App</option>
+                      </Form.Select>
                       <Form.Control.Feedback type="invalid">
-                        designation is required
+                        {errors.projectCategory}
+                        {/* projectCategory is required */}
                       </Form.Control.Feedback>
                     </Form.Group>
                     </Row>
@@ -147,10 +160,10 @@ function MyVerticallyCenteredModal(props) {
                       md="6"
                       controlId="validationFormiktimeAllotted"
                     >
-                      <Form.Label>Time Allotted</Form.Label>
+                      <Form.Label>Time Allotted(in weeks)</Form.Label>
                       <InputGroup hasValidation>
                         <Form.Control
-                          type="text"
+                          type="number"
                           placeholder="Time Allotted"
                           aria-describedby="inputGroupPrepend"
                           name="timeAllotted"
@@ -177,7 +190,8 @@ function MyVerticallyCenteredModal(props) {
                       />
 
                       <Form.Control.Feedback type="invalid">
-                        deadline is required
+                        {errors.deadline}
+                        {/* deadline is required */}
                       </Form.Control.Feedback>
                     </Form.Group>
                   
@@ -210,6 +224,48 @@ function MyVerticallyCenteredModal(props) {
 
 export const Projects = () => {
   const [modalShow, setModalShow] = React.useState(false)
+  const projects=[
+    {
+      "id":"1",
+      "projectName":"MPS",
+      "clientName":"Lupika Guha",
+      "mobile":"7979797979",
+      "projectCategory":"E-Commerce Website",
+      "timeAlloted":4,
+      "deadline":"22/07/2025",
+      "terms":true
+    },
+    {
+      "id":"2",
+      "projectName":"CEC",
+      "clientName":"Diksha Singh",
+      "mobile":"4545454545",
+      "projectCategory":"Expense Tracker",
+      "timeAlloted":4,
+      "deadline":"22/07/2025",
+      "terms":true
+    },
+    {
+      "id":"3",
+      "projectName":"GPA",
+      "clientName":"Snehal Kumari",
+      "mobile":"9898989898",
+      "projectCategory":"Real Time Chat App",
+      "timeAlloted":4,
+      "deadline":"22/07/2025",
+      "terms":true
+    },
+    {
+      "id":"4",
+      "projectName":"Quora",
+      "clientName":"Minu Kumari",
+      "mobile":"6767676767",
+      "projectCategory":"Social Media App",
+      "timeAlloted":4,
+      "deadline":"22/07/2025",
+      "terms":true
+    },
+  ]
 
 
   return (
@@ -228,14 +284,46 @@ export const Projects = () => {
                  </Button>
                 <MyVerticallyCenteredModal  show={modalShow} onHide={() => setModalShow(false)}/>
               </Col>
-              <Col md={1}><Button variant="danger">Delete</Button></Col>
-              <Col md={8}></Col>
+              {/* <Col md={1}><Button variant="danger">Delete</Button></Col> */}
+              <Col md={9}></Col>
               <Col md={1}><Button variant="success">Update</Button></Col>
               <Col md={1}><Button variant="info"> Export</Button></Col>
             </Row>
           </div>
           <div className="manage2">
             <h4>Manage Projects</h4>
+            <Table striped hover bordered>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Project Name</th>
+                  <th>Client Name</th>
+                  <th>Mobile</th>
+                  <th>Project Category</th>
+                  <th>Time Allotted(in weeks)</th>
+                  <th>Deadline</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                projects.map((project)=>(
+                  <tr>
+                    <td className='alignCenter'>{project.id}</td>
+                    <td>{project.projectName}</td>
+                    <td>{project.clientName}</td>
+                    <td className='alignCenter'>{project.mobile}</td>
+                    <td>{project.projectCategory}</td>
+                    <td className='alignCenter'>{project.timeAlloted}</td>
+                    <td className='alignCenter'>{project.deadline}</td>
+                    <td><FaPen style={{color:"blue",marginLeft:"15px"}}/></td>
+                    <td><FaTrash style={{color:"red",marginLeft:"20px"}}/></td>
+                  </tr>
+                ))
+              }
+              </tbody>
+            </Table>
            </div>
           </Col>
         </Row>

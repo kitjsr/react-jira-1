@@ -25,6 +25,12 @@
     padding:18px;
 
 }
+.leftBody{
+  background:rgb(244, 247, 250) ;
+}
+.rightBody{
+  background:rgb(244, 247, 250) ;
+}
 
 .manage2{
   background: #fff;
@@ -37,6 +43,12 @@
   color: #334155;
   text-align: center;
   padding-bottom: 20px;
+}
+.manage2 h4{
+  padding-bottom: 15px;
+}
+.alignCenter{
+  text-align: center;
 }
 .manage3{
   background: #fff;

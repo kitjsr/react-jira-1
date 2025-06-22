@@ -16,7 +16,7 @@ export const Dashboard = () => {
           <div className="sidenav"><SideNav></SideNav></div>
             
           </Col>
-          <Col>
+          <Col md={10}>
           <div className="manage3">
             <h2>G'Day Anushruti!</h2>
            </div>

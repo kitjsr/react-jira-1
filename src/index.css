@@ -42,11 +42,7 @@ h1,h2,h3{
   background-image: linear-gradient(to right,#61045f,#aa076b);
   padding: 6px;
 } */
-.container {
-  display: flex;
-  gap: 30px;
-  flex-direction: column;
-}
+
 
 .left {
   background: yellow;
