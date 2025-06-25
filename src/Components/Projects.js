@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { SideNav } from "../Components/SideNav";
@@ -13,6 +15,7 @@ import { Image } from "react-bootstrap";
 import jiraAdd from "../Assets/jiraAdd.png";
 import { FaBeer, FaPen, FaPenAlt, FaTrash } from "react-icons/fa";
 import { red } from '@mui/material/colors';
+import { InputMask } from '@react-input/mask';
 
 
 
@@ -31,7 +34,7 @@ function MyVerticallyCenteredModal(props) {
     .matches(/[0-9]/, 'Only number'),
     deadline: yup.string().required(),
     projectCategory: yup.string().required(),
-    terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
+    // terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
   });
   return (
     <Modal
@@ -116,7 +119,8 @@ function MyVerticallyCenteredModal(props) {
                     >
                       <Form.Label>Mobile</Form.Label>
                       <InputGroup hasValidation>
-                        <Form.Control
+                        <InputMask mask="__________" replacement={{ _: /\d/ }} 
+                         hasValidation
                           type="text"
                           placeholder="Mobile"
                           aria-describedby="inputGroupPrepend"
@@ -181,6 +185,8 @@ function MyVerticallyCenteredModal(props) {
                       <Form.Label>Deadline</Form.Label>
                       <Form.Control
                         type="date"
+                        id='demo'
+                         min="demo" max="2030-12-31"
                         placeholder="deadline"
                         name="deadline"
                         value={values.deadline}
@@ -196,7 +202,7 @@ function MyVerticallyCenteredModal(props) {
                     </Form.Group>
                   
                   </Row>
-                  <Form.Group className="mb-4">
+                  {/* <Form.Group className="mb-4">
                     <Form.Check
                       required
                       name="terms"
@@ -207,7 +213,7 @@ function MyVerticallyCenteredModal(props) {
                       feedbackType="invalid"
                       id="validationFormik0"
                     />
-                  </Form.Group>
+                  </Form.Group> */}
                   <Button type="submit" variant='success'>Create</Button>
                 </Form>
               )}
@@ -223,6 +229,9 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export const Projects = () => {
+    // const [projects, setProjects] = useState([]);
+
+    
   const [modalShow, setModalShow] = React.useState(false)
   const projects=[
     {
@@ -324,6 +333,17 @@ export const Projects = () => {
               }
               </tbody>
             </Table>
+            <h2>Filter table</h2>
+            
+        <div className="card card1" >
+            <DataTable value={projects} sortMode="multiple" tableStyle={{ minWidth: '50rem' }}>
+                <Column field="projectName" header="Project Name" sortable style={{ width: '25%' }}></Column>
+                <Column field="clientName" header="Client Name" sortable style={{ width: '25%' }}></Column>
+                <Column field="mobile" header="Mobile Number" sortable style={{ width: '25%' }}></Column>
+                <Column field="projectCategory" header="Project Category" sortable style={{ width: '25%' }}></Column>
+                <Column field="deadline" header="Deadline" sortable style={{ width: '25%' }}></Column>
+            </DataTable>
+        </div>
            </div>
           </Col>
         </Row>
