@@ -10,7 +10,8 @@
 .box{
     border:1px solid #DEEBFF;
     text-align: center;
-    background: #E8F1FF;
+    background: cyan;
+    /* background: #E8F1FF; */
     padding:15px;
     margin: 30px 30px 7px 30px;
     border-radius: 6px;

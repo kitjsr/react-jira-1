@@ -3,9 +3,9 @@
 } */
  
 .box2{
-    border:1px solid #DEEBFF;
+    border:1px solid #a3abb9;
     text-align: center;
-    background: #E8F1FF;
+    background: #F4F5F7;
     /* padding:15px; */
     /* margin: 30px 30px 7px 30px; */
     margin:10px;
@@ -13,7 +13,20 @@
     float: left;
 
 }
-.box2:hover{
+
+.box3{
+    border:1px solid #cfd6e1;
+    text-align: center;
+    background: #fff;
+    /* background: #E8F1FF; */
+    /* padding:15px;  */
+     margin: 30px 30px 7px 30px;
+    /* margin:5px; */
+    /* padding: 1px; */
+    border-radius: 6px;
+    float: left;
+}
+.box3:hover{
     border:1px solid #cfd6e1;
         /* box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15); */
     box-shadow: 1px 1px 6px 1px #cfd6e1;
