@@ -345,7 +345,7 @@ export const Projects = () => {
             </div>
             <div className="manage2">
               <h4>Manage Projects</h4>
-              <p>Date: {date.toLocaleDateString()}</p>
+              <h4>Date: {date.toLocaleDateString()}</h4>
               <Table striped hover bordered>
                 <thead>
                   <tr>

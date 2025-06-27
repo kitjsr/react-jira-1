@@ -1,0 +1,20 @@
+/* .box1{
+    background: greenyellow;
+} */
+ 
+.box2{
+    border:1px solid #DEEBFF;
+    text-align: center;
+    background: #E8F1FF;
+    /* padding:15px; */
+    /* margin: 30px 30px 7px 30px; */
+    margin:10px;
+    border-radius: 6px;
+    float: left;
+
+}
+.box2:hover{
+    border:1px solid #cfd6e1;
+        /* box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15); */
+    box-shadow: 1px 1px 6px 1px #cfd6e1;
+}
