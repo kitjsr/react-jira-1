@@ -91,7 +91,7 @@ export const Plans = () => {
       "live":"Deploy the page",
     },
   ]
-  
+  const [data,setData]=useState(tasks)
   return (
     <>
       <Container fluid className="dash">
@@ -119,7 +119,7 @@ export const Plans = () => {
               <Col className='box2'>
               <h5>To-Do</h5>
               {
-                tasks.filter((task)=>task.position==="1").map((task)=>(
+                data.filter((task)=>task.position==="1").map((task)=>(
                   <>
                 <div className='box3'>
                     <p>{task.taskName}</p>
@@ -132,7 +132,7 @@ export const Plans = () => {
               <Col className='box2'>
               <h5>In-Design</h5>
               {
-                tasks.filter((task)=>task.position==="2").map((task)=>(
+                data.filter((task)=>task.position==="2").map((task)=>(
                   <>
                 <div className='box3'>
                     <p>{task.taskName}</p>
@@ -144,7 +144,7 @@ export const Plans = () => {
               <Col className='box2'>
               <h5>User-Testing</h5>
               {
-                tasks.filter((task)=>task.position==="3").map((task)=>(
+                data.filter((task)=>task.position==="3").map((task)=>(
                   <>
                 <div className='box3'>
                     <p>{task.taskName}</p>
@@ -156,7 +156,7 @@ export const Plans = () => {
               <Col className='box2'>
               <h5>Approval</h5>
               {
-                tasks.filter((task)=>task.position==="5").map((task)=>(
+                data.filter((task)=>task.position==="5").map((task)=>(
                   <>
                 <div className='box3'>
                     <p>{task.taskName}</p>
@@ -168,7 +168,7 @@ export const Plans = () => {
               <Col className='box2'>
               <h5>Live</h5>
               {
-                tasks.filter((task)=>task.position==="4").map((task)=>(
+                data.filter((task)=>task.position==="4").map((task)=>(
                   <>
                 <div className='box3'>
                     <p>{task.taskName}</p>

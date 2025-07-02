@@ -7,11 +7,7 @@
     "@emotion/styled": "^11.14.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^7.1.1",
-<<<<<<< HEAD
     "@mui/material": "^7.1.2",
-=======
-    "@mui/material": "^7.1.1",
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
     "@react-input/mask": "^2.0.4",
     "@tailwindcss/cli": "^4.1.10",
     "@testing-library/dom": "^10.4.0",

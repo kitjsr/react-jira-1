@@ -85,7 +85,8 @@ function App() {
         <Route path="/apps" element={<Apps />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/teams" element={<Teams />} />
+        {/* <Route path="/teams" element={<Teams />} /> */}
+        <Route path="/teams/:index" element={<Teams />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/dummy" element={<Dummy />} />
         <Route path="/signUp" element={<SignUp />} />

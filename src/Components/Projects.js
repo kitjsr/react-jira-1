@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
-=======
-import React, { useState, useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import { SideNav } from "../Components/SideNav";
@@ -20,12 +14,8 @@ import jiraAdd from "../Assets/jiraAdd.png";
 import { InputMask } from "primereact/inputmask";
 // import { InputMask } from '@react-input/mask';
 import { FaBeer, FaPen, FaPenAlt, FaTrash } from "react-icons/fa";
-<<<<<<< HEAD
+import { Link } from "react-router";
 // import { red } from '@mui/material/colors';
-=======
-import { red } from '@mui/material/colors';
-import { InputMask } from '@react-input/mask';
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
 
 function NewProject(props) {
   const { Formik } = formik;
@@ -114,7 +104,6 @@ function NewProject(props) {
                         {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
                       </Form.Group>
                     </Row>
-<<<<<<< HEAD
                     <Row className="mb-3">
                       <Form.Group
                         as={Col}
@@ -162,18 +151,6 @@ function NewProject(props) {
                           isValid={touched.mobile && !errors.mobile}
                         >
                           {/* <Form.Control
-=======
-                  <Row className="mb-3">
-                    <Form.Group
-                      as={Col}
-                      md="6"
-                      controlId="validationFormikmobile"
-                    >
-                      <Form.Label>Mobile</Form.Label>
-                      <InputGroup hasValidation>
-                        <InputMask mask="__________" replacement={{ _: /\d/ }} 
-                         hasValidation
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
                           type="text"
                           placeholder="Mobile"
                           aria-describedby="inputGroupPrepend"
@@ -220,7 +197,6 @@ function NewProject(props) {
                           {errors.projectCategory}
                           {/* projectCategory is required */}
                         </Form.Control.Feedback>
-<<<<<<< HEAD
                       </Form.Group>
                     </Row>
                     <Row className="mb-4">
@@ -282,48 +258,6 @@ function NewProject(props) {
               </Formik>
             </div>
           </Col>
-=======
-                      </InputGroup>
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationFormik03">
-                      <Form.Label>Deadline</Form.Label>
-                      <Form.Control
-                        type="date"
-                        id='demo'
-                         min="demo" max="2030-12-31"
-                        placeholder="deadline"
-                        name="deadline"
-                        value={values.deadline}
-                        onChange={handleChange}
-                        isInvalid={!!errors.deadline}
-                        isValid={touched.deadline && !errors.deadline}
-                      />
-
-                      <Form.Control.Feedback type="invalid">
-                        {errors.deadline}
-                        {/* deadline is required */}
-                      </Form.Control.Feedback>
-                    </Form.Group>
-                  
-                  </Row>
-                  {/* <Form.Group className="mb-4">
-                    <Form.Check
-                      required
-                      name="terms"
-                      label="Agree to terms and conditions"
-                      onChange={handleChange}
-                      isInvalid={!!errors.terms}
-                      feedback={errors.terms}
-                      feedbackType="invalid"
-                      id="validationFormik0"
-                    />
-                  </Form.Group> */}
-                  <Button type="submit" variant='success'>Create</Button>
-                </Form>
-              )}
-            </Formik></div>
-        </Col>
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
         </Row>
       </Modal.Body>
       {/* <Modal.Footer>
@@ -334,17 +268,9 @@ function NewProject(props) {
 }
 
 export const Projects = () => {
-<<<<<<< HEAD
   const [newProject, setNewProject] = React.useState(false);
   const [date, setDate] = useState(new Date());
   const projects = [
-=======
-    // const [projects, setProjects] = useState([]);
-
-    
-  const [modalShow, setModalShow] = React.useState(false)
-  const projects=[
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
     {
       id: "1",
       projectName: "MPS",
@@ -434,13 +360,12 @@ export const Projects = () => {
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
-<<<<<<< HEAD
                 </thead>
                 <tbody>
-                  {projects.map((project) => (
+                  {projects.map((project,index) => (
                     <tr>
-                      <td className="alignCenter">{project.id}</td>
-                      <td>{project.projectName}</td>
+                      <td className="alignCenter">{index+1}</td>
+                      <td><Link to={`/teams/${index}`}>{project.projectName}</Link></td>
                       <td>{project.clientName}</td>
                       <td className="alignCenter">{project.mobile}</td>
                       <td>{project.projectCategory}</td>
@@ -457,24 +382,6 @@ export const Projects = () => {
                 </tbody>
               </Table>
             </div>
-=======
-                ))
-              }
-              </tbody>
-            </Table>
-            <h2>Filter table</h2>
-            
-        <div className="card card1" >
-            <DataTable value={projects} sortMode="multiple" tableStyle={{ minWidth: '50rem' }}>
-                <Column field="projectName" header="Project Name" sortable style={{ width: '25%' }}></Column>
-                <Column field="clientName" header="Client Name" sortable style={{ width: '25%' }}></Column>
-                <Column field="mobile" header="Mobile Number" sortable style={{ width: '25%' }}></Column>
-                <Column field="projectCategory" header="Project Category" sortable style={{ width: '25%' }}></Column>
-                <Column field="deadline" header="Deadline" sortable style={{ width: '25%' }}></Column>
-            </DataTable>
-        </div>
-           </div>
->>>>>>> a12f1d08bc8f2e6fe2c71ea42b05ac64dd07ec63
           </Col>
         </Row>
       </Container>

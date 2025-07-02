@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import { SideNav } from "../Components/SideNav";
@@ -13,7 +13,6 @@ import { Image } from "react-bootstrap";
 import jiraAdd from "../Assets/jiraAdd.png";
 import { FaBeer, FaPen, FaTrash } from "react-icons/fa";
 import { colors } from "@mui/material";
-import { useParams } from "react-router";
 
 function CreateTeam(props) {
   const { Formik } = formik;
@@ -94,14 +93,13 @@ function CreateTeam(props) {
                             value={values.projectName}
                             onChange={handleChange}
                             isInvalid={!!errors.projectName}
-                            isValid={touched.projectName && !errors.projectName}
-                          >
-                            <option value="">Select Project</option>
-                            <option value="MPS"> MPS</option>
-                            <option value="CEC">CEC</option>
-                            <option value="GPA"> GPA</option>
-                            <option value="Quora">Quora</option>
-                          </Form.Select>
+                            isValid={touched.projectName && !errors.projectName}>
+                          <option value="">Select Project</option>
+                          <option value="MPS"> MPS</option>
+                          <option value="CEC">CEC</option>
+                          <option value="GPA"> GPA</option>
+                          <option value="Quora">Quora</option>
+                        </Form.Select>
                           <Form.Control.Feedback type="invalid">
                             {/* projectName is required */}
                             {errors.projectName}
@@ -125,23 +123,13 @@ function CreateTeam(props) {
                             value={values.teamMember}
                             onChange={handleChange}
                             isInvalid={!!errors.teamMember}
-                            isValid={touched.teamMember && !errors.teamMember}
-                          >
-                            <option value=""> Choose people</option>
-                            <option value="Anushruti Mahato">
-                              {" "}
-                              Anushruti Mahato
-                            </option>
-                            <option value="Esha Kumari">Esha Kumari</option>
-                            <option value="Aman Kumar Verma">
-                              {" "}
-                              Aman Kumar Verma
-                            </option>
-                            <option value="Aditya Shukla">
-                              {" "}
-                              Aditya Shukla
-                            </option>
-                          </Form.Select>
+                            isValid={touched.teamMember && !errors.teamMember}>
+                          <option value=""> Choose people</option>
+                          <option value="Anushruti Mahato"> Anushruti Mahato</option>
+                          <option value="Esha Kumari">Esha Kumari</option>
+                          <option value="Aman Kumar Verma"> Aman Kumar Verma</option>
+                          <option value="Aditya Shukla"> Aditya Shukla</option>
+                        </Form.Select>
 
                           <Form.Control.Feedback type="invalid">
                             {/* teamMember is required */}
@@ -179,9 +167,9 @@ function AddPeple(props) {
       .string()
       .required()
       .matches(/^\d{10}$/, "Mobile number must be of 10 digits"),
-    // .min(10, "Mobile number must be of 10 digits")
-    // .max(10, "Mobile number must be of 10 digits")
-    // .matches(/[0-9]/, "Password requires a number"),
+      // .min(10, "Mobile number must be of 10 digits")
+      // .max(10, "Mobile number must be of 10 digits")
+      // .matches(/[0-9]/, "Password requires a number"),
     email: yup.string().email().required(),
     roleAssigned: yup.string().required(),
   });
@@ -362,109 +350,40 @@ export const Teams = () => {
   const [modalCreate, setModalCreate] = React.useState(false);
   const [modalShow, setModalShow] = React.useState(false);
 
-  const addPeople = [
+  const addPeople=[
     {
-      id: "1",
-      projectName: "MPS",
-      clientName: "Lupika Guha",
-      mobile: "7979797979",
-      projectCategory: "E-Commerce Website",
-      timeAlloted: 4,
-      deadline: "22/07/2025",
-      terms: true,
-      teamMembers: [
-        {
-          id: "1",
-          firstName: "Anushruti",
-          lastName: "Mahato",
-          mobile: "6287752535",
-          email: "anushruti5882@gmail.com",
-          roleAssigned: "Designer",
-        },
-        {
-          id: "2",
-          firstName: "Esha",
-          lastName: "Kumari",
-          mobile: "7667017876",
-          email: "eshakumarijsr0@gmail.com",
-          roleAssigned: "Developer",
-        },
-        {
-          id: "3",
-          firstName: "Aman",
-          lastName: " Kumar Verma",
-          mobile: "9393939393",
-          email: "amankumar@gmail.com",
-          roleAssigned: "Tester",
-        },
-        {
-          id: "4",
-          firstName: "Aditya",
-          lastName: "Shukla",
-          mobile: "7878787878",
-          email: "adityashukla02@gmail.com",
-          roleAssigned: "Deployer",
-        },
-      ],
+      "id":"1",
+      "firstName":"Anushruti",
+      "lastName":"Mahato",
+      "mobile":"6287752535",
+      "email":"anushruti5882@gmail.com",
+      "roleAssigned":"Designer",
     },
     {
-      id: "2",
-      projectName: "CEC",
-      clientName: "Diksha Singh",
-      mobile: "4545454545",
-      projectCategory: "Expense Tracker",
-      timeAlloted: 4,
-      deadline: "22/07/2025",
-      terms: true,
-      
-      teamMembers: [
-        {
-          id: "1",
-          firstName: "Anushruti",
-          lastName: "Mahato",
-          mobile: "6287752535",
-          email: "anushruti5882@gmail.com",
-          roleAssigned: "Designer",
-        },
-        {
-          id: "2",
-          firstName: "Esha",
-          lastName: "Kumari",
-          mobile: "7667017876",
-          email: "eshakumarijsr0@gmail.com",
-          roleAssigned: "Developer",
-        }
-      ],
+      "id":"2",
+      "firstName":"Esha",
+      "lastName":"Kumari",
+      "mobile":"7667017876",
+      "email":"eshakumarijsr0@gmail.com",
+      "roleAssigned":"Developer",
     },
     {
-      id: "3",
-      projectName: "GPA",
-      clientName: "Snehal Kumari",
-      mobile: "9898989898",
-      projectCategory: "Real Time Chat App",
-      timeAlloted: 4,
-      deadline: "22/07/2025",
-      terms: true,
-      teamMembers:[
-
-      ]
+      "id":"3",
+      "firstName":"Aman",
+      "lastName":" Kumar Verma",
+      "mobile":"9393939393",
+      "email":"amankumar@gmail.com",
+      "roleAssigned":"Tester",
     },
     {
-      id: "4",
-      projectName: "Quora",
-      clientName: "Minu Kumari",
-      mobile: "6767676767",
-      projectCategory: "Social Media App",
-      timeAlloted: 4,
-      deadline: "22/07/2025",
-      terms: true,
-      teamMembers:[
-        
-      ]
+      "id":"4",
+      "firstName":"Aditya",
+      "lastName":"Shukla",
+      "mobile":"7878787878",
+      "email":"adityashukla02@gmail.com",
+      "roleAssigned":"Deployer",
     },
-  ];
-  // const [index,setIndex]=useState("0")
-  const {index}=useParams()
+  ]
   return (
     <>
       <Container fluid className="dash">
@@ -508,9 +427,6 @@ export const Teams = () => {
             </div>
             <div className="manage2">
               <h4>Manage People</h4>
-              <p>Number of members : {addPeople[index].teamMembers.length}</p>
-              {addPeople[index].teamMembers.length>0?
-            
               <Table striped hover bordered>
                 <thead>
                   <tr>
@@ -525,33 +441,22 @@ export const Teams = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {addPeople.filter((project)=>project.id==="1").teamMembers.map((people) => ( */}
-                  {addPeople[index].teamMembers.map((people) => (
-                    <tr>
-                      <td className="alignCenter">{people.id}</td>
-                      <td>
-                        {people.firstName + " "}
-                        {people.lastName}
-                      </td>
-                      {/* <td>{people.lastName}</td> */}
-                      <td className="alignCenter">{people.mobile}</td>
-                      <td>{people.email}</td>
-                      <td>{people.roleAssigned}</td>
-                      <td>
-                        <FaPen style={{ color: "blue", marginLeft: "15px" }} />
-                      </td>
-                      <td>
-                        <FaTrash style={{ color: "red", marginLeft: "20px" }} />
-                      </td>
-                    </tr>
-                  ))}
+                  {
+                    addPeople.map((people)=>(
+                      <tr>
+                        <td className="alignCenter">{people.id}</td>
+                        <td>{people.firstName +" "}{people.lastName}</td>
+                        {/* <td>{people.lastName}</td> */}
+                        <td className="alignCenter">{people.mobile}</td>
+                        <td>{people.email}</td>
+                        <td>{people.roleAssigned}</td>
+                        <td><FaPen style={{color:"blue",marginLeft:"15px"}}/></td>
+                        <td><FaTrash style={{color:"red",marginLeft:"20px"}}/></td>
+                      </tr>
+                    ))
+                  }
                 </tbody>
               </Table>
-              
-              :
-
-              <p>No team members available</p>
-            }
             </div>
           </Col>
         </Row>
